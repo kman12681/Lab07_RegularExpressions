@@ -62,6 +62,7 @@ namespace Lab_07
                     }
                     else
                     {
+                        Console.WriteLine();
                         Console.WriteLine("Invalid Email.");
                         Console.WriteLine();
                     }
@@ -156,7 +157,9 @@ namespace Lab_07
 
         static bool IsEmail(string emailInput)
         {
-            return Regex.IsMatch(emailInput, @"[A-Za-z0-9]{5,30}@[A-Za-z0-9]{5,10}\.[A-Za-z0-9]{2,3}");
+             return Regex.IsMatch(emailInput, @"^[A-Za-z0-9]{5,30}@[A-Za-z0-9]{5,10}\.[A-Za-z0-9]{2,3}$");
+            
+            //[A-Za-z0-9]{5,30}[@][A-Za-z0-9]{5,10}[.][a-z]{2,3}$
         }
 
         static bool IsNumber(string phoneInput)
